@@ -8,3 +8,4 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( d3.v3.min.js )
 Rails.application.config.assets.precompile += %w( graph.js )
+Rails.application.config.assets.precompile += [%w( parties.css.scss ), %w(riding_summaries.css.scss)]
