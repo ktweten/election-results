@@ -1,0 +1,32 @@
+body {
+  background-color: #DDDDDD;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  background-color: #443333;
+  color: white;
+}
+
+tr {
+  color: #443333;
+}
+
+.odd {
+  background-color: #eeeeee;
+}
+
+.even {
+  background-color: #ddcccc;
+}
+
+#chart {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}

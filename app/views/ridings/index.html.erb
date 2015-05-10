@@ -1,0 +1,29 @@
+<h1>Listing ridings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Region</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <p><%= notice %></p>
+    <% @ridings.each do |riding| %>
+      <tr>
+        <td><%= riding.name %></td>
+        <td><%= riding.region %></td>
+        <td><%= link_to 'Show', riding %></td>
+        <td><%= link_to 'Edit', edit_riding_path(riding) %></td>
+        <td><%= link_to 'Destroy', riding, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Riding', new_riding_path %>
+

@@ -1,0 +1,30 @@
+<h1>Riding Summary</h1>
+
+<p><%= notice %></p>
+<h2><%= @riding_summary[:region] %></h2>
+<h3><%= @riding_summary[:name] %></h3>
+
+<%= javascript_tag do %>
+    window.riding_id = <%= @riding_summary[:id] %>;
+<% end %>
+
+<div id="d3graph">
+    <svg id="chart" viewBox="0, 0, 500, 500">
+
+    </svg>
+</div>
+
+<div id="names">
+  <table class="name_table">
+    <thead>
+      <tr>
+        <th>Party</th>
+        <th>Candidate</th>
+        <th>Votes</th>
+      </tr>
+    </thead>
+  </table>
+
+</div>
+<%= javascript_include_tag "d3.v3.min" %>
+<%= javascript_include_tag "graph" %>

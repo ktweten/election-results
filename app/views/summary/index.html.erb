@@ -1,0 +1,37 @@
+<h1>Ridings by Margin of Victory</h1>
+
+<%= form_tag(summary_path, :method=>'get') do %>
+    <%= label_tag 'maximum_margin', "Ridings where the margin of victory was less than or equal to: " %>
+    <%= number_field_tag 'maximum_margin', @summary.get_maximum_margin, in: 1..100 %>
+    <%= button_tag 'Submit' %>
+<% end %>
+
+<table id="riding_table">
+  <thead>
+  <tr>
+    <th>Region</th>
+    <th>Name</th>
+    <th>MP</th>
+    <th>Party</th>
+    <th>Margin</th>
+    <th>Link</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <p><%= notice %></p>
+  <% @summary.get_ridings.each_with_index do |riding, index| %>
+      <tr class="<%= index % 2 == 0 ? 'odd' : 'even' %>">
+        <td width="25%"><%= riding['region'].split('/')[0] %></td>
+        <td width="25%"><%= riding['name'].split('/')[0] %></td>
+        <td width="20%"><%= riding['mp_name'] %></td>
+        <td width="20%"><%= riding['party'].split('/')[0] %></td>
+        <td width="5%"><%= riding['margin'] %>%</td>
+        <td width="5%"><a href=<%= "/riding_summary/#{riding['id']}" %> >Link</a></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<p id="bars">
+
+</p>
