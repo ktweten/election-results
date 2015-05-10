@@ -6,5 +6,7 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( d3.v3.min.js )
 Rails.application.config.assets.precompile += %w( graph.js )
 Rails.application.config.assets.precompile += [%w( parties.css.scss ), %w(riding_summaries.css.scss)]
+Rails.application.config.assets.precompile += [%w( application.js ), %w( application.css )]
