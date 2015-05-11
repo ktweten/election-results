@@ -9,17 +9,13 @@ class Summary
   end
 
   def set_maximum_margin(margin)
-    @maximum_margin = margin
-  end
-
-  def sum_votes(votes)
-    sum = 0
-    votes.each { |vote| sum += vote }
-    return sum
+    if (0.0..100.0).include? margin
+      @maximum_margin = margin
+    end
   end
 
   def get_margin(votes)
-    total = sum_votes votes
+    total = votes.reduce(:+)
     margin = votes.length < 2 ? 100.0 : (votes[0] - votes[1])* 100.0/total
   end
 
