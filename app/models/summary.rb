@@ -23,10 +23,9 @@ class Summary
     ridings = []
     Riding.all.each do |riding|
       candidates = Candidate.where(riding_id: riding.id).order(votes: :desc)
-      votes = []
 
-      candidates.each do |candidate|
-        votes.append candidate.votes
+      votes = candidates.map do |candidate|
+        candidate.votes
       end
 
       riding_margin = get_margin(votes)
@@ -41,6 +40,7 @@ class Summary
         ridings.append(entry)
       end
     end
+    
     return ridings.sort { |a, b| b['margin'] <=> a['margin'] }
   end
 
