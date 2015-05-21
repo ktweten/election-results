@@ -5,7 +5,7 @@
 <h3><%= @riding_summary[:name] %></h3>
 
 <%= javascript_tag do %>
-    window.riding_id = <%= @riding_summary[:id] %>;
+    window.riding = <%= @riding_summary.to_json.to_s.html_safe %>;
 <% end %>
 
 <div id="d3graph">

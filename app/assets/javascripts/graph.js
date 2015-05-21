@@ -1,18 +1,7 @@
 (function() {
     'use strict';
-    if (window.riding_id !== undefined) {
-        $.ajax({
-            type: "GET",
-            contentType: "application/json; charset=utf-8",
-            url: 'data/' + window.riding_id,
-            dataType: 'json',
-            success: function (data) {
-                draw(data);
-            },
-            error: function (result) {
-                error();
-            }
-        });
+    if (window.riding !== undefined) {
+        draw(window.riding);
     }
 
     function short_party_name(candidate) {
