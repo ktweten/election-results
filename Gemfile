@@ -41,6 +41,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # Use Foundation for responsive design.
 gem 'foundation-rails'
+gem 'haml'
 
 gem 'rails_serve_static_assets'
 gem 'rails_stdout_logging'

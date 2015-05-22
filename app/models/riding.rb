@@ -1,4 +1,5 @@
 class Riding < ActiveRecord::Base
+  has_many :candidates, -> {order 'votes DESC'}
 
   def self.import(file)
     Riding.destroy_all

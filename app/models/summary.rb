@@ -20,9 +20,10 @@ class Summary
   end
 
   def get_ridings(margin = @maximum_margin)
-    ridings = []
-    Riding.all.each do |riding|
-      candidates = Candidate.where(riding_id: riding.id).order(votes: :desc)
+    entries = []
+    ridings = Riding.includes(:candidates).all
+    ridings.each do |riding|
+      candidates = riding.candidates
 
       votes = candidates.map do |candidate|
         candidate.votes
@@ -37,11 +38,11 @@ class Summary
         entry['party'] = candidates[0].party_name
         entry['margin'] = riding_margin.round(2)
         entry['id'] = riding.id
-        ridings.append(entry)
+        entries.append(entry)
       end
     end
     
-    return ridings.sort { |a, b| b['margin'] <=> a['margin'] }
+    return entries.sort { |a, b| b['margin'] <=> a['margin'] }
   end
 
 end

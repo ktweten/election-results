@@ -1,0 +1,23 @@
+%h1 Riding Summary
+
+%p #{notice}
+%h2 #{@riding_summary[:region]}
+%h3 #{@riding_summary[:name]}
+
+:javascript
+    window.riding = #{@riding_summary.to_json.to_s.html_safe};
+
+#d3graph
+    %svg#chart{:viewBox => '0, 0, 500, 500'}
+
+#names
+    %table.name_table
+        %thead
+            %tr
+                %th Party
+                %th Candidate
+                %th Votes
+
+:erb
+    <%= javascript_include_tag "d3.v3.min" %>
+    <%= javascript_include_tag "graph" %>
