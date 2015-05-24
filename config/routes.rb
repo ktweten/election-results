@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'summary' => 'summary#index'
 
-  get 'riding_summary/data/:riding_id' => 'riding_summary#data', :defaults => { :format => 'json' }
-  get 'riding_summary/:riding_id' => 'riding_summary#view'
+  get 'riding/data/:id' => 'ridings#data', :defaults => { :format => 'json' }
+  get 'riding/:id' => 'ridings#show'
 
 end
