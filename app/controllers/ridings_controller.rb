@@ -10,6 +10,14 @@ class RidingsController < ApplicationController
   # GET /ridings/1
   # GET /ridings/1.json
   def show
+    get_candidate_data(params[:id])
+    @riding_summary = {
+        id: params[:id],
+        region: @riding.region,
+        name: @riding.name,
+        candidates: @candidates,
+        total_votes: @total_votes
+    }
   end
 
   # GET /ridings/new
@@ -60,6 +68,23 @@ class RidingsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def get_candidate_data(riding_id)
+    @riding = Riding.find(riding_id)
+    @candidates = Candidate.where(riding_id: riding_id).order(votes: :desc)
+    @total_votes = 0
+    @candidates.each { |candidate| @total_votes += candidate.votes }
+  end
+
+  def data
+    get_candidate_data(params[:id])
+    respond_to do |format|
+      format.json {
+        render :json => { candidates: @candidates, total_votes: @total_votes }
+      }
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

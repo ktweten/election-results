@@ -27,11 +27,8 @@
         <td width="20%"><%= riding['mp_name'] %></td>
         <td width="20%"><%= riding['party'].split('/')[0] %></td>
         <td width="5%"><%= riding['margin'] %>%</td>
-        <td width="5%"><a href=<%= "/riding_summary/#{riding['id']}" %> >Link</a></td>
+        <td width="5%"><a href=<%= "/riding/#{riding['id']}" %> >Link</a></td>
       </tr>
   <% end %>
   </tbody>
 </table>
-<p id="bars">
-
-</p>
