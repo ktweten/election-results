@@ -7,18 +7,19 @@
 :javascript
     window.riding = #{@riding_summary.to_json.to_s.html_safe};
 
-#d3graph
-    %svg#chart{:viewBox => '0, 0, 500, 500'}
+.row
+    #d3graph.large-6.columns.left
+        %svg#chart{:viewBox => '0, 0, 500, 500'}
 
-#names
-    %table.name_table
-        %thead
-            %tr
-                %th Party
-                %th Candidate
-                %th Votes
+    .large-6.columns
+        %table.name_table
+            %thead#names
+                %tr
+                    %th.results_head Party
+                    %th.results_head Candidate
+                    %th.results_head Votes
 
 :erb
     <%= link_to 'Back', ridings_path %>
     <%= javascript_include_tag "d3.v3.min" %>
-    <%= javascript_include_tag "graph" %>
+    <%= javascript_include_tag "ridings" %>

@@ -40,7 +40,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # Use Foundation for responsive design.
-gem 'foundation-rails'
+gem 'foundation-rails', '5.4.3.1'
 gem 'haml'
 
 gem 'rails_serve_static_assets'

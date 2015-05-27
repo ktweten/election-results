@@ -1,3 +1,49 @@
-// Place all the styles related to the Ridings controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#bar_graph, #d3graph {
+  background-color: darkgray;
+  padding: 2.5%;
+  border: 2px solid black;
+  margin-bottom: 25px;
+}
+
+#names {
+  border: 2px solid black;
+}
+
+.name_table {
+  background-color: white;
+}
+
+table, thead, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #ddcccc;
+}
+
+tr {
+  background-color: #eeeeee;
+}
+
+td, th {
+  padding: 10px;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+svg {
+  background-color: white;
+}

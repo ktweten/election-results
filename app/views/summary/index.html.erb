@@ -2,20 +2,20 @@
 
 <%= form_tag(summary_path, :method=>'get') do %>
     <%= label_tag 'maximum_margin', "Ridings where the margin of victory was less than or equal to: " %>
-    <%= number_field_tag 'maximum_margin', @summary.get_maximum_margin, in: 1..100 %>
+    <%= number_field_tag 'maximum_margin', @summary.get_maximum_margin, in: 1..100, class: 'percent' %>
     <%= button_tag 'Submit' %>
 <% end %>
 
 <table id="riding_table">
   <thead>
-  <tr>
-    <th>Region</th>
-    <th>Name</th>
-    <th>MP</th>
-    <th>Party</th>
-    <th>Margin</th>
-    <th>Link</th>
-  </tr>
+    <tr>
+      <th class="results_head">Region</th>
+      <th class="results_head">Name</th>
+      <th class="results_head">MP</th>
+      <th class="results_head">Party</th>
+      <th class="results_head">Margin</th>
+      <th class="results_head">Link</th>
+    </tr>
   </thead>
 
   <tbody>
