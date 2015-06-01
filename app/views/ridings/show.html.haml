@@ -1,8 +1,8 @@
-%h1 Riding Summary
-
-%p #{notice}
-%h2 #{@riding_summary[:region]}
-%h3 #{@riding_summary[:name]}
+.heading
+    %h1 Riding Summary
+    %p #{notice}
+    %h2 #{@riding_summary[:region]}
+    %h3 #{@riding_summary[:name]}
 
 :javascript
     window.riding = #{@riding_summary.to_json.to_s.html_safe};
