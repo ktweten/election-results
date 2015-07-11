@@ -1,7 +1,7 @@
 (function() {
     'use strict';
-    if (window.riding !== undefined) {
-        draw(window.riding);
+    if (riding !== undefined) {
+        draw(riding);
     }
 
     function short_party_name(candidate) {

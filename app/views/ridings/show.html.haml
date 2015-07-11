@@ -5,7 +5,7 @@
     %h3 #{@riding_summary[:name]}
 
 :javascript
-    window.riding = #{@riding_summary.to_json.to_s.html_safe};
+    var riding = #{@riding_summary.to_json.to_s.html_safe};
 
 .row
     #d3graph.large-6.columns.left
